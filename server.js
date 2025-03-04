@@ -18,7 +18,12 @@ const server = jsonServer.create();
 const router = jsonServer.router("database.json");
 const middlewares = jsonServer.defaults();
 
+// Use JSON Server middlewares
 server.use(middlewares);
 server.use(router);
 
-module.exports = server; // Remove manual port listening
+// Vercel's serverless function handler
+module.exports = (req, res) => {
+  server(req, res);
+};
+
