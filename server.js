@@ -25,21 +25,3 @@ server.use(router);
 
 server.listen(port);
 
-// {
-//   "version": 2,
-//   "builds": [
-//     {
-//       "src": "server.js",
-//       "use": "@vercel/node",
-//       "config": {
-//         "includeFiles": ["database.json"]
-//       }
-//     }
-//   ],
-//   "routes": [
-//     {
-//       "src": "/(.*)",
-//       "dest": "server.js"
-//     }
-//   ]
-// }
