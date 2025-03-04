@@ -27,3 +27,23 @@ module.exports = (req, res) => {
   server(req, res);
 };
 
+
+
+// {
+//   "version": 2,
+//   "builds": [
+//     {
+//       "src": "server.js",
+//       "use": "@vercel/node",
+//       "config": {
+//         "includeFiles": ["database.json"]
+//       }
+//     }
+//   ],
+//   "routes": [
+//     {
+//       "src": "/(.*)",
+//       "dest": "server.js"
+//     }
+//   ]
+// }
