@@ -13,21 +13,17 @@
 
 // module.exports = server;
 
-const jsonServer = require("json-server");
-const server = jsonServer.create();
-const router = jsonServer.router("database.json");
-const middlewares = jsonServer.defaults();
 
-// Use JSON Server middlewares
+const jsonServer = require("json-server"); // importing json-server library
+const server = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 8080; //  chose port from here like 8080, 3001
+
 server.use(middlewares);
 server.use(router);
 
-// Vercel's serverless function handler
-module.exports = (req, res) => {
-  server(req, res);
-};
-
-
+server.listen(port);
 
 // {
 //   "version": 2,
